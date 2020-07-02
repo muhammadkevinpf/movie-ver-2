@@ -9,11 +9,10 @@ function Sidebar() {
       return links.hasOwnProperty("to") ? (
         fetchLink({ to: links.to, index: links.index, title: links.title })
       ) : (
-        <Accordion>
-          {console.log(links.index)}
+        <Accordion defaultActiveKey={links.index}>
           <Accordion.Toggle
             variant="link"
-            className="list-group-item list-group-item-action bg-light"
+            className="list-group-item list-group-item-action"
             eventKey={links.index}
           >
             {links.title}
@@ -37,7 +36,7 @@ function Sidebar() {
   const fetchLink = ({ to, index, title, subMenu = false, icon }) => (
     <Link
       to={to}
-      className={`list-group-item list-group-item-action bg-light ${
+      className={`list-group-item list-group-item-action ${
         subMenu ? "submenu" : ""
       }`}
       key={index}
@@ -48,7 +47,7 @@ function Sidebar() {
     </Link>
   );
   return (
-    <div className="bg-light" id="sidebar-wrapper">
+    <div id="sidebar-wrapper">
       <div className="sidebar-heading">
         <h2>Movie</h2>
       </div>
