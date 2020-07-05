@@ -1,15 +1,17 @@
 import React from "react";
-
+import { Row, Col } from "react-bootstrap";
+import Hamburger from "./Hamburger";
 function Navbar() {
   return (
-    <div className="navbar">
+    <Row className="nav">
       <input
         type="text"
-        className="form-control"
+        className="form-control input-text"
         name="search"
         placeholder="Search"
       />
-    </div>
+      <Hamburger />
+    </Row>
   );
 }
 
