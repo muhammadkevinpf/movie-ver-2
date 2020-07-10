@@ -2,8 +2,10 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { linkSidebar } from "./util/data";
 import { Accordion } from "react-bootstrap";
+import { SidebarContext } from "../SidebarContext";
 
 function Sidebar() {
+  const [active, setActive] = useContext(SidebarContext);
   const fetchMenu = (link = linkSidebar) =>
     link.map((links) => {
       return links.hasOwnProperty("to") ? (
@@ -47,7 +49,7 @@ function Sidebar() {
     </Link>
   );
   return (
-    <div id="sidebar-wrapper">
+    <div id="sidebar-wrapper" className={active ? "toggled" : ""}>
       <div className="sidebar-heading">
         <h2>Movie</h2>
       </div>

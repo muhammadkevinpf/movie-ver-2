@@ -9,6 +9,7 @@ function Navbar() {
         className="form-control input-text"
         name="search"
         placeholder="Search"
+        autoComplete="off"
       />
       <Hamburger />
     </Row>

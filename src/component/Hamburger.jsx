@@ -16,7 +16,7 @@ const Hamburger = () => {
       isActive={isActive}
       toggleButton={toggleButton}
       buttonWidth={30}
-      className="d-xl-none"
+      className="d-xl-none d-md-none"
     />
   );
 };
