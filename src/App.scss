@@ -1,10 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
-
-$softBlack: #1e1e1e;
-$darkerBlack: #121212;
-$softerBlack: #2e2e2e;
-$whiteColor: #fff;
-
+@import "./assets/css/variables";
 * {
   color: $whiteColor;
 }
@@ -63,6 +58,7 @@ $whiteColor: #fff;
 .input-text {
   width: 80%;
 }
+
 
 @media (min-width: 768px) {
   #sidebar-wrapper {

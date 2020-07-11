@@ -1,0 +1,9 @@
+@import "./variables";
+
+.card {
+  border-radius: 0;
+  background-color: $softBlack;
+  .card-image-top {
+    border-radius: 0;
+  }
+}
