@@ -12,7 +12,7 @@ function Discover({ fetchDiscover, movie: { movies } }) {
       <h3 className="font-weight-bold">Discover</h3>
       <Row>
         {movies.map((item) => (
-          <Col sm={12} md={4} xl={3} key={item.id}>
+          <Col sm={6} md={4} xl={3} key={item.id}>
             <Cards data={item} />
           </Col>
         ))}
