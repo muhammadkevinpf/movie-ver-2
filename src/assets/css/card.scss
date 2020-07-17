@@ -20,6 +20,10 @@
 .card-title {
   @include elilipsis-text();
   -webkit-line-clamp: 2;
+  transition: transform 0.35s;
+  &:hover {
+    transform: translate(0, -5px);
+  }
 }
 
 .card-body {

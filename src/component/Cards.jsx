@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 import "../assets/css/card.scss";
 import StarRatings from "react-star-ratings";
+import { Link } from "react-router-dom";
 function Cards({ data }) {
   return (
     <Card className="mb-5">
@@ -26,7 +27,9 @@ function Cards({ data }) {
         </div>
       </div>
       <Card.Body>
-        <Card.Title title={data.title}>{data.title}</Card.Title>
+        <Card.Title title={data.title}>
+          <Link to={`/${data.id}`}>{data.title}</Link>
+        </Card.Title>
       </Card.Body>
     </Card>
   );
