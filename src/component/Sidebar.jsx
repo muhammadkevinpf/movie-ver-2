@@ -21,7 +21,7 @@ function Sidebar() {
           </Accordion.Toggle>
           {typeof links.subContent !== "undefined" &&
             links.subContent.map((subcontent) => (
-              <Accordion.Collapse eventKey={links.index}>
+              <Accordion.Collapse eventKey={links.index} key={subcontent.index}>
                 {fetchLink({
                   to: subcontent.to,
                   index: subcontent.index,
