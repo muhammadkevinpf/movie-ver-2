@@ -75,6 +75,20 @@ a:hover {
   width: 80%;
 }
 
+.page-link {
+  background-color: $darkerBlack;
+  border-color: $softBlack;
+  &:hover {
+    background-color: $softerBlack;
+    border-color: $softBlack;
+  }
+}
+
+.page-item.active .page-link {
+  background-color: $softerBlack;
+  border-color: $softBlack;
+}
+
 @media (min-width: 768px) {
   #sidebar-wrapper {
     margin-left: 0;
