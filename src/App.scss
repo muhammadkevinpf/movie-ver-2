@@ -78,10 +78,17 @@ a:hover {
 .page-link {
   background-color: $darkerBlack;
   border-color: $softBlack;
+  color: $whiteColor;
   &:hover {
     background-color: $softerBlack;
     border-color: $softBlack;
+    color: $whiteColor;
   }
+}
+
+.page-item.disabled .page-link {
+  background-color: $darkBlack;
+  border-color: $softBlack;
 }
 
 .page-item.active .page-link {
