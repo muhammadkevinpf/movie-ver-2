@@ -5,10 +5,16 @@ import { fetchDiscover } from "../redux/action/movieAction";
 import { connect } from "react-redux";
 import { displaySkeleton } from "../component/util/componentRender";
 import Pagination from "../component/Paging";
-function Discover({ fetchDiscover, movie: { movies, loading } }) {
+function Discover({
+  fetchDiscover,
+  movie: { movies, loading, totalPage, currentPage },
+}) {
   useEffect(() => {
-    fetchDiscover();
-  }, [fetchDiscover]);
+    async function discoverData() {
+      await fetchDiscover(currentPage);
+    }
+    discoverData();
+  }, [fetchDiscover, currentPage]);
 
   const skeleteonArray = [];
 
@@ -27,7 +33,7 @@ function Discover({ fetchDiscover, movie: { movies, loading } }) {
     <Container fluid>
       <h3 className="font-weight-bold">Discover</h3>
       <Row>{loading ? skeleteonArray : displayData()}</Row>
-      <Pagination />
+      <Pagination totalPages={totalPage} currentPage={currentPage} />
     </Container>
   );
 }
