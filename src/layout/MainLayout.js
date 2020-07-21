@@ -1,17 +1,19 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Cards from "../component/Cards";
-import { fetchDiscover } from "../redux/action/movieAction";
+import { fetchMovieOrTv } from "../redux/action/movieAction";
 import { connect } from "react-redux";
 import { displaySkeleton } from "../component/util/componentRender";
 import Pagination from "../component/Paging";
-function Discover({
-  fetchDiscover,
+function MainLayout({
+  fetchMovieOrTv,
   movie: { movies, loading, totalPage, currentPage },
+  type,
+  status,
 }) {
   useEffect(() => {
     async function discoverData() {
-      await fetchDiscover(currentPage);
+      await fetchMovieOrTv(type, status, currentPage);
     }
     const element = document.querySelector("#page-content-wrapper");
     element.scrollTo({
@@ -20,7 +22,7 @@ function Discover({
       behavior: "smooth",
     });
     discoverData();
-  }, [fetchDiscover, currentPage]);
+  }, [fetchMovieOrTv, currentPage, type, status]);
 
   const skeleteonArray = [];
 
@@ -35,9 +37,19 @@ function Discover({
       </Col>
     ));
 
+  const titleCase = (str) => {
+    return str
+      .toLowerCase()
+      .split("_")
+      .map(function (word) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+      })
+      .join(" ");
+  };
+
   return (
     <Container fluid>
-      <h3 className="font-weight-bold">Discover</h3>
+      <h3 className="font-weight-bold">{titleCase(status)}</h3>
       <Row>{loading ? skeleteonArray : displayData()}</Row>
       <Pagination totalPages={totalPage} currentPage={currentPage} />
     </Container>
@@ -49,7 +61,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapActionToProps = {
-  fetchDiscover,
+  fetchMovieOrTv,
 };
 
-export default connect(mapStateToProps, mapActionToProps)(Discover);
+export default connect(mapStateToProps, mapActionToProps)(MainLayout);

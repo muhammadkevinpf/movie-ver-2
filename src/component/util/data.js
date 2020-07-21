@@ -18,13 +18,13 @@ const linkSidebar = [
       },
       {
         index: 2,
-        to: "/movies/playing",
+        to: "/movies/popular",
         title: "Popular",
         icon: <TiChartLine />,
       },
       {
         index: 3,
-        to: "/movies/playing",
+        to: "/movies/top-rated",
         title: "Top Rated",
         icon: <TiChartBar />,
       },
@@ -36,19 +36,19 @@ const linkSidebar = [
     subContent: [
       {
         index: 1,
-        to: "/tv/playing",
-        title: "Now Playing",
+        to: "/tv/on-the-air",
+        title: "On The Air",
         icon: <TiMediaPlay />,
       },
       {
         index: 2,
-        to: "/tv/playing",
+        to: "/tv/popular",
         title: "Popular",
         icon: <TiChartLine />,
       },
       {
         index: 3,
-        to: "/tv/playing",
+        to: "/tv/top-rated",
         title: "Top Rated",
         icon: <TiChartBar />,
       },
